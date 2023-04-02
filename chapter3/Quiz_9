@@ -1,0 +1,32 @@
+#include <iostream> 
+#include <cmath> 
+using namespace std;
+class Line {
+	int sx, sy, ex, ey;
+public:
+	Line();
+	void setTwoPoints();
+	double getLineLength();
+};
+
+Line::Line() {
+	sx, sy, ex, ey = 0;
+}
+void Line::setTwoPoints() {
+	cout << "시작점 좌표 정수 두 개를 입력하세요. ";
+	cin >> sx >> sy;
+	cout << "끝점 좌표 정수 두 개를 입력하세요. ";
+	cin >> ex >> ey;
+}
+
+double Line::getLineLength() {
+	double result = sqrt(pow(ex - sx, 2) + pow(ey - sy, 2));
+
+	return result;
+}
+
+int main() {
+	Line myline;
+	myline.setTwoPoints();
+	cout << "myline의 길이는 " << myline.getLineLength() << " 입니다. \n";
+}
